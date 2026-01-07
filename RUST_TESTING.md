@@ -33,3 +33,5 @@ fn test_split_u64_roundtrip(val: u64) {
 
 ## Property-based testing
 When testing functions that have complex behavior over a wide range of inputs, consider using property-based testing with the `proptest` crate.
+
+When using proptest, follow the workflow recommended in that project's docs. In particular, be sure to add specific tests for cases that come up as failures during proptest runs, to ensure they don't regress in the future.
