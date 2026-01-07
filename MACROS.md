@@ -7,6 +7,9 @@ The agent should also make note of any invariants that should cause macro expans
 
 The agent should then implement the macro to make the tests pass.
 
+## Use `pretty_assertions` for comparing generated code
+When writing tests for macros that generate code, use the `pretty_assertions` crate to compare the generated code with the expected code. This crate provides better diff output when assertions fail, making it easier to identify differences between the actual and expected code.
+
 ## Use fully qualified paths in generated code
 When generating code in a macro, always use fully qualified paths to refer to types and functions. This avoids issues with name resolution and ensures that the generated code will compile correctly regardless of the context in which it is used. For example, instead of generating code that refers to `Vec`, generate code that refers to `::std::vec::Vec`.
 
