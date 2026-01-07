@@ -5,7 +5,9 @@ The agent should always run `cargo test` in the workspace root to run all tests 
 ## Test file organization
 Prefer to put tests in a `./tests/` subfolder next to the code being tested, rather than in the same file as the implementation code. This keeps the implementation code clean and focused, and makes it easier to find and run tests.
 
-Try to ensure that the file organization for tests matches that of the implementation code, e.g., if functionality for `TypeY` is implemented in the file `type_y.rs`, put tests in `./tests/type_y.rs`. If there are many tests for a single file that that touch on multiple aspects, consider putting them in a subdirectories, e.g., `tests/type_y/mod.rs` with `tests/type_y/{topic_a}.rs`, `tests/type_y/{topic_b}.rs`, etc. The names should be descriptive of the functionality being tested -- describe the topic or aspect being tested.
+Try to ensure that the file organization for tests matches that of the implementation code, e.g., if functionality for `TypeY` is implemented in the file `type_y.rs`, put tests in `./tests/type_y.rs`. 
+
+If there are many tests for a single file that that touch on distinct topics, consider putting them in a separate files rather than having one gigantic test file, e.g., `tests/type_y/mod.rs` with `tests/type_y/{topic_a}.rs`, `tests/type_y/{topic_b}.rs`, etc. When splitting by test topic, the names should be descriptive of the functionality being tested (describe the topic or aspect being tested); for example, if testing the impls of various traits (serialization, reflection) for `TypeY`, use names like `tests/type_y/serialization.rs`, `tests/type_y/reflection.rs` rather than generic names like `tests/type_y/test1.rs`.
 
 ## Do not use doctests
 Tests should always be in dedicated test functions, doctests don't work well with rust-analyzer and other tools, and are harder to maintain.
