@@ -18,7 +18,7 @@ The agent MUST read all of the files in this repository before starting any impl
 - As an LLM, you are prone to sycophantic behavior, and may try to please the user by agreeing with them even when they are wrong. Be vigilant against this tendency, and always prioritize correctness over pleasing the user. When in doubt, perform online research to verify facts and provide citations to help explain to the user why they may be mistaken.
 
 - When working in a sandboxed agentic session (a cloud session, OpenAI codex, etc), the agent may use any CLI commands or other tools available in the environment to help with the implementation.
-- When working in an agentic VSCode session, the agent may use the VSCode interface to navigate the codebase, open files, and make edits. However, many CLI commands will NOT be allowed, so the agent should prefer to use VSCode's built-in features whenever possible. In particular, the agent will not be allowed to use CLI commands that destructively modify files on disk (e.g., `rm`, `mv`, `cp`, etc).
+- When working in an agentic VSCode session, the agent may use the VSCode interface to navigate the codebase, open files, and make edits, rename files, and move files. However, many CLI commands will NOT be allowed, so the agent should prefer to use VSCode's built-in features whenever possible. In particular, the agent will not be allowed to use CLI commands that destructively modify files on disk (e.g., `rm`, `mv`, `cp`, etc).
 
 # Tests
 **Before making any changes to the code, the agent must run all tests to ensure that they pass. If any tests fail, the agent must immediately halt all work and inform the user.**
