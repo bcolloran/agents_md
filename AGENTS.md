@@ -6,7 +6,12 @@ The agent should come up with a plan for how to implement the task, breaking it 
 The agent should make note of any apparent misspecifications, ambiguities in the spec, or edge cases or surprises that come up during the implementation, and report those to the user in the post-implementation summary and in the PR description.
 
 ## Referring to other guidelines
-The agent MUST read all of the files in this repository before starting any implementation. The other files contain guidelines and best practices for implementing various types of tasks. The agent should refer to the relevant files as needed during the implementation.
+The agent MUST read ALL of the files in this repository before starting any implementation. The other files contain guidelines and best practices for implementing various types of tasks. The agent should refer to the relevant files as needed during the implementation.
+
+The files are not listed here, the agent must list all of the files in this repository and read them all.
+
+The agent should be able to list all of the files in this repository by querying the GitHub API:
+https://api.github.com/repos/bcolloran/agents_md/git/trees/main?recursive=1
 
 **If the agent is not able to access these files for any reason, the agent must inform the user and halt all work until access is restored.**
 
