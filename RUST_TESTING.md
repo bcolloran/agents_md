@@ -15,6 +15,16 @@ If there are many tests for a single file that that touch on distinct topics, co
 ## Do not use doctests
 Tests should always be in dedicated test functions, doctests don't work well with rust-analyzer and other tools, and are harder to maintain.
 
+### Exception: README.md code snippets
+The only exception is code snippets in `README.md` files. These should be written as doctests to ensure they stay up to date and correct.
+
+Make sure to set up the crate to include the README.md as crate-level documentation, so that the doctests in the README.md are run as part of `cargo test`. Example below, but the details may vary depending on the crate structure:
+```
+// in src/lib.rs (or lib.rs)
+#![doc = include_str!("../README.md")]
+```
+
+
 ## Multiple cases in one test
 When it makes sense to repeatedly test a single function on multiple *input* cases, use a `#[test_case(data; "data case description")]` attribute on a test to specify the data cases. This allows the test to be run multiple times with different inputs, and will report each case separately in the test results.
 
