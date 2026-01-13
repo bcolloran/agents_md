@@ -16,7 +16,7 @@ If there are many tests for a single file that that touch on distinct topics, co
 Tests should always be in dedicated test functions, doctests don't work well with rust-analyzer and other tools, and are harder to maintain.
 
 ### Exception: README.md code snippets
-The only exception is code snippets in `README.md` files. These should be written as doctests to ensure they stay up to date and correct.
+The only exception is code snippets in `README.md` files. ***These should be written as doctests to ensure they stay up to date and correct.***
 
 Make sure to set up the crate to include the README.md as crate-level documentation, so that the doctests in the README.md are run as part of `cargo test`. Example below, but the details may vary depending on the crate structure:
 ```
