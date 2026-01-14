@@ -3,7 +3,7 @@
 - Use clear headings and subheadings to organize content.
 
 ## Front matter
-Include Github CI and Codecov badge under the title.
+Include Github CI pass/fail status and Codecov coverage badge under the title.
 
 # Examples
 
